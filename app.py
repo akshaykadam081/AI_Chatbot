@@ -13,4 +13,4 @@ demo = gr.ChatInterface(
     description="Llama 2 powered chatbot"
 )
 
-demo.launch()
+demo.launch(share=True)
