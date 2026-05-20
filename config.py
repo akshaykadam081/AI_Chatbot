@@ -1,3 +1,3 @@
-MODEL_NAME = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
-MAX_TOKENS = 200
+MODEL_NAME = "llama-3.1-8b-instant"
+MAX_TOKENS = 150
 TEMPERATURE = 0.7
