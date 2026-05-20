@@ -1,6 +1,6 @@
 import torch
 from model_loader import tokenizer, model, device
-from config import MAX_NEW_TOKENS, TEMPERATURE, TOP_P
+from config import MAX_NEW_TOKENS, TEMPERATURE
 
 
 def generate_response(message, history):
