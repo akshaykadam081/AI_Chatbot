@@ -1,11 +1,10 @@
 import os
-from openai import OpenAI
+from groq import Groq
 
-print("Connecting to Together AI...")
+print("Connecting to Groq...")
 
-client = OpenAI(
-    api_key=os.getenv("TOGETHER_API_KEY"),
-    base_url="https://api.together.xyz/v1"
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 print("Connected successfully.")
