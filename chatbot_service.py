@@ -11,20 +11,14 @@ def generate_response(message, history):
         }
     ]
 
-    for user_msg, bot_msg in history:
-        messages.append({
-            "role": "user",
-            "content": user_msg
-        })
-        messages.append({
-            "role": "assistant",
-            "content": bot_msg
-        })
+    # Only keep last 3 turns → saves tokens
+    recent_history = history[-3:]
 
-    messages.append({
-        "role": "user",
-        "content": message
-    })
+    for user_msg, bot_msg in recent_history:
+        messages.append({"role": "user", "content": user_msg})
+        messages.append({"role": "assistant", "content": bot_msg})
+
+    messages.append({"role": "user", "content": message})
 
     response = client.chat.completions.create(
         model=MODEL_NAME,
