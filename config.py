@@ -1,3 +1,3 @@
-MODEL_NAME = "meta-llama/Llama-2-7b-chat-hf"
+MODEL_NAME = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 MAX_NEW_TOKENS = 200
 TEMPERATURE = 0.7
