@@ -3,14 +3,13 @@ from chatbot_service import generate_response
 
 
 def chatbot(message, history):
-    response = generate_response(message, history)
-    return response
+    return generate_response(message, history)
 
 
 demo = gr.ChatInterface(
     fn=chatbot,
     title="AI Chatbot",
-    description="Llama 2 powered chatbot"
+    description="Together AI powered chatbot"
 )
 
 demo.launch(share=True)
