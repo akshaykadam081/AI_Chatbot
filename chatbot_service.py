@@ -4,6 +4,7 @@ from config import MODEL_NAME, MAX_TOKENS, TEMPERATURE
 
 def generate_response(message, history):
 
+    print(message+"***1")
     messages = [
         {
             "role": "system",
@@ -18,11 +19,14 @@ def generate_response(message, history):
     for item in recent_history:
         print("DEBUG:", item)
         if isinstance(item, dict):
+            print(message+"####")
             messages.append(item)
             
+            
+    print(messages+"####2222") 
     messages.append({"role": "user", "content": message})
 
-    print(message)
+    print(messages+"####3333") 
     response = client.chat.completions.create(
         model=MODEL_NAME,
         messages=messages,
