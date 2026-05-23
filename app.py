@@ -12,4 +12,4 @@ demo = gr.ChatInterface(
     description="Together AI powered chatbot"
 )
 
-demo.launch(share=True)
+demo.launch(server_name="0.0.0.0", server_port=7860)
