@@ -15,11 +15,16 @@ def generate_response(message, history):
     recent_history = history[-3:]
 
     for item in recent_history:
-        user_msg = item[0]
-        bot_msg = item[1]
-        messages.append({"role": "user", "content": user_msg})
-        messages.append({"role": "assistant", "content": bot_msg})
+        print("DEBUG:", item)
+        if isinstance(item, dict):
+            role = item.get("role")
+            content = item.get("content")
 
+            if role == "user":
+                prompt += f"User: {content}\n"
+            elif role == "assistant":
+                prompt += f"Assistant: {content}\n"
+            
     messages.append({"role": "user", "content": message})
 
     response = client.chat.completions.create(
