@@ -14,7 +14,9 @@ def generate_response(message, history):
     # Only keep last 3 turns → saves tokens
     recent_history = history[-3:]
 
-    for user_msg, bot_msg in recent_history:
+    for item in recent_history:
+        user_msg = item[0]
+        bot_msg = item[1]
         messages.append({"role": "user", "content": user_msg})
         messages.append({"role": "assistant", "content": bot_msg})
 
