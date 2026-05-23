@@ -18,13 +18,7 @@ def generate_response(message, history):
     for item in recent_history:
         print("DEBUG:", item)
         if isinstance(item, dict):
-            role = item.get("role")
-            content = item.get("content")
-
-            if role == "user":
-                prompt += f"User: {content}\n"
-            elif role == "assistant":
-                prompt += f"Assistant: {content}\n"
+            messages.append(item)
             
     messages.append({"role": "user", "content": message})
 
