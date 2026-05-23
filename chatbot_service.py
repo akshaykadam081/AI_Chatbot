@@ -22,6 +22,7 @@ def generate_response(message, history):
             
     messages.append({"role": "user", "content": message})
 
+    print(message)
     response = client.chat.completions.create(
         model=MODEL_NAME,
         messages=messages,
