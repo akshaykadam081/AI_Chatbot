@@ -10,7 +10,8 @@ def generate_response(message, history):
             "content": "You are a helpful AI assistant."
         }
     ]
-
+    
+    prompt = ""
     # Only keep last 3 turns → saves tokens
     recent_history = history[-3:]
 
